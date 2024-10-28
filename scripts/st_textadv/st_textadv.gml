@@ -21,11 +21,15 @@ function st_textadv() {
 	angle = 0;
 	alpha = 1;
 	textpos = new vec2();
+	wiggle = new vec2();
+	shake = new vec2();
 	var mychar = "";
 	for (i=1; i<=charpos; i++) { //aw yeah, now this is happening!
-		mychar = string_char_at(msg[talkpos].text, i);
 		textpos.x = x+xpos-width/2;
 		textpos.y = y+lb*ftheight;
+		textpass();
+		mychar = string_char_at(msg[talkpos].text, i);
+		
 		textpos.y -= ftheight*(size-1)/2;
 	    if mychar = "\n" {
 	        lb++;
@@ -33,7 +37,8 @@ function st_textadv() {
 	    } else if lb >= 0 {
 			draw_set_color(color);
 			draw_set_alpha(alpha);
-			draw_text_transformed(textpos.x, textpos.y, mychar, size, size, angle); //yeah i mean thas text baby
+			//draw_text_transformed(textpos.x, textpos.y, mychar, size, size, angle); //yeah i mean thas text baby
+			draw_string(textpos.x, textpos.y, mychar, u, size, u, angle);
 			xpos += string_width(mychar)*size;
 		}
 	}

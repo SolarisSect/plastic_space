@@ -88,7 +88,7 @@ function txt_plastic() { //amogus
 	
 	endevent = function() { // this should send the player back to the title screen instead.
 		log("GAME OVER, MAN!");
-		//game_end();
-		startpattern("Midnight Alarm");
+		game_end();
+		//startpattern("Midnight Alarm");
 	};
 }

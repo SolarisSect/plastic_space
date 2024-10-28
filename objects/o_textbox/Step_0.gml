@@ -1,3 +1,4 @@
+global.count++;
 if !surface_exists(textsurf) { //thanks, windows
 	textsurf = surface_create(room_width, room_height);
 }

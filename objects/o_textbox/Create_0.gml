@@ -6,6 +6,7 @@ tacklog = [];
 endevent = c_null;
 width = 20;
 height = 20;
+tevents = [];
 
 talkers = [];
 spritepos = new vec2();
@@ -37,3 +38,5 @@ wiggle = new vec2();
 shake = new vec2();
 textpos = new vec2();
 waitcount = 0;
+
+global.count = 0;

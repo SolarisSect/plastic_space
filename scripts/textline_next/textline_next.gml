@@ -6,6 +6,7 @@ function textline_next() {
 		}
 		draw_set_font(font);
 		talkpos++;
+		tevents = [];
 		if msg[talkpos].type != "normal" {
 			msg[talkpos].action(id);
 			continue;
@@ -13,7 +14,8 @@ function textline_next() {
 		msg[talkpos].event();
 		msg[talkpos].text = global.textguy[$msg[talkpos].name].texteffects + msg[talkpos].text;
 		array_push(backlog, msg[talkpos]);
-		msg[talkpos].text = lb_auto(msg[talkpos].text, width);
+		var thetext = load_tevents(msg[talkpos].text, id);
+		msg[talkpos].text = lb_auto(thetext, width);
 		charpos = 0;
 		charpush(id, new talkchar(msg[talkpos].sprite, msg[talkpos].name, msg[talkpos].spritepos));
 		talkspeed = talkers[0].textspeed;
