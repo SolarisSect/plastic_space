@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "DIALOGUE",
-    "path": "folders/DIALOGUE.yy",
+    "name": "dialog",
+    "path": "folders/dialog.yy",
   },
 }
